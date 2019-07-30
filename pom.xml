@@ -3,18 +3,54 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example.maven-project</groupId>
+  <groupId>com.swathijavvaji.sonar</groupId>
   <artifactId>maven-project</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Maven Project</name>
   <description>Sample Maven project with a working, deployable site.</description>
-  <url>http://www.example.com</url>
+  <url>http://www.github.com</url>
 
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.4.0.905</version>
+      <scope>pom</scope>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!-- Optional URL to server. Default value is http://localhost:9000 -->
+        <sonar.host.url> http://localhost:9000 </sonar.host.url>
+
+        <sonar.host.url> http://localhost:9000 </sonar.host.url>
+
+        <!--  <sonar.jdbc.url>your database URL</sonar.jdbc.url>
+       <sonar.jdbc.driver>Your database driver</sonar.jdbc.driver>
+       <sonar.jdbc.username>DB username</sonar.jdbc.username>
+       <sonar.jdbc.password>db password</sonar.jdbc.password>        -->
+
+      </properties>
+    </profile>
+  </profiles>
 
   <modules>
     <module>server</module>
@@ -206,12 +242,12 @@
     </dependencies>
   </dependencyManagement>
 
-  <scm>
-    <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://github.com/jleetutorial/maven-project</url>
-  </scm>
+  <!--<scm>-->
+    <!--<connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>-->
+    <!--<developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>-->
+    <!--<tag>HEAD</tag>-->
+    <!--<url>http://github.com/jleetutorial/maven-project</url>-->
+  <!--</scm>-->
 
   <prerequisites>
     <maven>3.0.3</maven>
