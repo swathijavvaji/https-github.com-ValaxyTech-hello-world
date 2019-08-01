@@ -5,14 +5,20 @@
   <groupId>com.swathijavvaji.sonar</groupId>
   <artifactId>MavenSonar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
-  <name>SonarQube Plugin for Maven</name>
+  <name> Swathi's SonarQube Plugin for Maven</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
+
+  <modules>
+    <module>server</module>
+    <module>webapp</module>
+  </modules>
 
   <dependencies>
     <dependency>
